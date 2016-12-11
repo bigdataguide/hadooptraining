@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>电商双十一大数据日志分析系统</title>
+        <script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
+        <script>
+         require.config({
+             paths: {
+                 echarts: 'http://echarts.baidu.com/build/dist'
+             }
+         });
+        </script>
+    </head>
+
+    <body>
+        <h3>{{title}}</h3>
+        {% set i = 1 %}
+        {% for template in templates %}
+        {% if template.type == 'chart' %}
+        <p>
+            {{template.title}}
+        </p>
+        <div id="chart_{{i}}" style="height:400px"></div>
+        <!--script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts-all-3.js"></script>
+        <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+        <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+        <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+        <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+        <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script-->
+        <script type="text/javascript">
+            require([
+            'echarts',
+            'echarts/chart/bar',
+            'echarts/chart/line',
+            'echarts/chart/pie',
+            'echarts/chart/map'
+            ],
+            function (ec) {
+            var myChart = ec.init(document.getElementById("chart_{{i}}"));
+            var option = {{template.option|safe}};
+            myChart.setOption(option);
+            });
+        </script>
+
+        {% set i = i + 1 %}
+        {% endif %}
+        {% endfor %}
+    </body>
+</html>
