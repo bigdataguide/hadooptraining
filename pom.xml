@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>cn.chinahadoop</groupId>
+  <artifactId>hadoop-example</artifactId>
+  <version>0.1.0-SNAPSHOT</version>
+  <description>Hadoop Examples</description>
+  <name>hadoop examples</name>
+  <packaging>pom</packaging>
+
+  <modules>
+    <module>hadoop</module>
+  </modules>
+
+  <repositories>
+    <repository>
+      <id>Maven2</id>
+      <url>http://repo1.maven.org/maven2</url>
+    </repository>
+  </repositories>
+
+  <build>
+    <!-- Makes sure the resources get added before they are processed
+  by placing this first -->
+    <resources>
+      <!-- Add the build webabpps to the classpth -->
+      <resource>
+        <directory>${project.build.directory}</directory>
+        <includes>
+          <include>webapps/**</include>
+        </includes>
+      </resource>
+
+      <resource>
+        <directory>src/main/resources</directory>
+        <includes>
+          <include>**/**</include>
+        </includes>
+      </resource>
+    </resources>
+  </build>
+
+</project>
