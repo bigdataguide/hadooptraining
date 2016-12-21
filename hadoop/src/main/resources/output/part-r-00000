@@ -1,0 +1,19 @@
+I	{input_1.txt=1, input_2.txt=1}
+She	{input_2.txt=2}
+a	{input_1.txt=1, input_2.txt=1}
+all	{input_1.txt=1}
+and	{input_2.txt=1}
+best	{input_2.txt=1}
+china	{input_1.txt=1}
+dream	{input_1.txt=1}
+friend	{input_2.txt=1}
+hard-working	{input_2.txt=1}
+have	{input_1.txt=1, input_2.txt=1}
+hello	{input_1.txt=2}
+is	{input_2.txt=2}
+kind	{input_2.txt=1}
+over	{input_1.txt=1}
+the	{input_1.txt=1}
+thin	{input_2.txt=1}
+very	{input_2.txt=1}
+world	{input_1.txt=2}
