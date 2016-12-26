@@ -1,19 +1,19 @@
-I	{input_1.txt=1, input_2.txt=1}
-She	{input_2.txt=2}
-a	{input_1.txt=1, input_2.txt=1}
-all	{input_1.txt=1}
-and	{input_2.txt=1}
-best	{input_2.txt=1}
-china	{input_1.txt=1}
-dream	{input_1.txt=1}
-friend	{input_2.txt=1}
-hard-working	{input_2.txt=1}
-have	{input_1.txt=1, input_2.txt=1}
-hello	{input_1.txt=2}
-is	{input_2.txt=2}
-kind	{input_2.txt=1}
-over	{input_1.txt=1}
-the	{input_1.txt=1}
-thin	{input_2.txt=1}
-very	{input_2.txt=1}
-world	{input_1.txt=2}
+I	2
+She	2
+a	2
+all	1
+and	1
+best	1
+china	1
+dream	1
+friend	1
+hard-working	1
+have	2
+hello	2
+is	2
+kind	1
+over	1
+the	1
+thin	1
+very	1
+world	2
