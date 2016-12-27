@@ -22,9 +22,9 @@ hive目录下包含三个子目录:
 ### 2. 配置Mysql
 ```
 #Ubuntu
-sudo apt-get install mysql
+sudo apt-get install mysql libmysql-java
 #CentOS
-sudo yum install mysql
+sudo yum install mysql mysql-connector-java
 #启动Mysql
 sudo service mysqld start
 ```
