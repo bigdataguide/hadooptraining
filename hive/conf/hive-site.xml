@@ -18,7 +18,7 @@
 <configuration>
     <property>
         <name>hive.metastore.uris</name>
-        <value>thrift://bigdata:9083</value>
+        <value>thrift://localhost:9083</value>
     </property>
     <property>
         <name>hive.server2.thrift.port</name>
@@ -26,7 +26,7 @@
     </property>
     <property>
         <name>javax.jdo.option.ConnectionURL</name>
-        <value>jdbc:mysql://bigdata/metastore?createDatabaseIfNotExist=true</value>
+        <value>jdbc:mysql://localhost/metastore?createDatabaseIfNotExist=true</value>
     </property>
     <property>
         <name>javax.jdo.option.ConnectionDriverName</name>
@@ -46,7 +46,7 @@
     </property>
     <property>
         <name>fs.defaultFS</name>
-        <value>hdfs://bigdata:9000</value>
+        <value>hdfs://localhost:9000</value>
     </property>
     <property>
         <name>datanucleus.autoCreateSchema</name>
@@ -56,7 +56,6 @@
         <name>datanucleus.autoStartMechanism</name> 
         <value>SchemaTable</value>
     </property>
-    datanucleus.schema.autoCreateTables
     <property>
         <name>datanucleus.schema.autoCreateTables</name>
         <value>true</value>
