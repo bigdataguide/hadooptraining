@@ -46,6 +46,7 @@ export HADOOP_HEAPSIZE=512
 
 # Set HADOOP_HOME to point to a specific hadoop install directory
 # HADOOP_HOME=${bin}/../../hadoop
+HADOOP_HOME=/home/bigdata/hadoop-2.7.3
 
 # Hive Configuration Directory can be controlled by:
 # export HIVE_CONF_DIR=

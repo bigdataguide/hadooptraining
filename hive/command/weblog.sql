@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS weblog (
+	user_id INT,
+	url STRING,
+	source_ip STRING
+) PARTITIONED BY (dt STRING)
+CLUSTERED BY (user_id) INTO 96 BUCKETS;
+
