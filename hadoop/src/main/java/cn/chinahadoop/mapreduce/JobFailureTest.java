@@ -25,6 +25,8 @@ public class JobFailureTest extends Configured implements Tool {
 		private Text word = new Text();
 
 		public void map(Object key, Text value, Context context) throws IOException, InterruptedException {
+			//get the task id from context
+			//for the first map task(task id=0), the task always fails
 			int id = context.getTaskAttemptID().getTaskID().getId();
 			System.out.println("id:" + id);
 			if (id == 0)

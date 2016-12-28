@@ -29,18 +29,19 @@ public class Grep extends Configured implements Tool {
 			ToolRunner.printGenericCommandUsage(System.out);
 			return 2;
 		}
-
+        // the temp dir between two mapreduce jobs
 		Path tempDir = new Path("grep-temp-" + Integer.toString(new Random().nextInt(Integer.MAX_VALUE)));
 
 		Configuration conf = getConf();
 		conf.set(RegexMapper.PATTERN, args[2]);
 		if (args.length == 4)
 			conf.set(RegexMapper.GROUP, args[3]);
-
+         //the first job
+		// word count
 		Job grepJob = new Job(conf);
 
 		try {
-
+            //define the first job
 			grepJob.setJobName("grep-search");
 
 			FileInputFormat.setInputPaths(grepJob, args[0]);
@@ -49,22 +50,23 @@ public class Grep extends Configured implements Tool {
 
 			grepJob.setCombinerClass(LongSumReducer.class);
 			grepJob.setReducerClass(LongSumReducer.class);
-
+            // output to tempDir
 			FileOutputFormat.setOutputPath(grepJob, tempDir);
 			grepJob.setOutputFormatClass(SequenceFileOutputFormat.class);
 			grepJob.setOutputKeyClass(Text.class);
 			grepJob.setOutputValueClass(LongWritable.class);
-
+            // result: word + count
 			grepJob.waitForCompletion(true);
-
+            //the second job
+			//sort
 			Job sortJob = new Job(conf);
 			sortJob.setJobName("grep-sort");
-
+            //tempDir to input
 			FileInputFormat.setInputPaths(sortJob, tempDir);
 			sortJob.setInputFormatClass(SequenceFileInputFormat.class);
 
 			sortJob.setMapperClass(InverseMapper.class);
-
+            //just write the sort data out
 			sortJob.setNumReduceTasks(1); // write a single file
 			FileOutputFormat.setOutputPath(sortJob, new Path(args[1]));
 			sortJob.setSortComparatorClass( // sort by decreasing freq

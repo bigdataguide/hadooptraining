@@ -25,6 +25,8 @@ public class TaskAttemptTest extends Configured implements Tool {
 		private Text word = new Text();
 
 		public void map(Object key, Text value, Context context) throws IOException, InterruptedException {
+			//get the task attempt id
+			//for the 4 previous attempt for the task, the attempt always fails.   
 			int id = context.getTaskAttemptID().getId();
 			System.out.println("id:" + id);
 			if (id < 4)
